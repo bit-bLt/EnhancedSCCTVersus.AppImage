@@ -18,7 +18,7 @@
 ## Third-Party
 
 ### Enhanced SCCT Versus
-**Note:** Steam Input, if needed, will not work for versions prior to 4.0
+**Note:** Steam Input will not work with this AppImage for Enhanced SCCT Versus versions prior to 4.0
 
 https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases
 
