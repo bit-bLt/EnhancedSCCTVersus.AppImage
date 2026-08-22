@@ -53,6 +53,7 @@ fi
 if [ ! -L "${WINEPREFIX}/drive_c/windows/syswow64/dsound.dll" ]; then
     ln -sf "${HERE}/opt/game/System/dsound.dll" "${WINEPREFIX}/drive_c/windows/syswow64/dsound.dll"
 fi
+
 ## # Run
 
 cd "${GAME_DIR}/System" || exit 1
