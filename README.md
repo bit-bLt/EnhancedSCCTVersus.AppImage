@@ -17,6 +17,7 @@
 
 ## Directory Structure
 
+```
 EnhancedSCCTVersus.AppDir
 ├── AppRun
 ├── EnhancedSCCTVersus.desktop
@@ -34,3 +35,4 @@ EnhancedSCCTVersus.AppDir
         ├── include
         ├── lib
         └── share
+```
