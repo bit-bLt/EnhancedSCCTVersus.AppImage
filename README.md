@@ -17,6 +17,11 @@
 
 ## Third-Party
 
+### Enhanced SCCT Versus
+**Note:** Steam Input, if needed, will not work for versions prior to 4.0
+
+https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases
+
 ### Wine
 
 I recommend grabbing the vanilla, non-staging, wow64 wine build from the following repository:
