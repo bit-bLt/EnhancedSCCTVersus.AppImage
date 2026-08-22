@@ -20,7 +20,7 @@
 ### Wine
 
 I recommend grabbing the vanilla, wow64 wine build from the following repository:
-https://github.com/Kron4ek/Wine-Builds
+https://github.com/Kron4ek/Wine-Builds/releases
 
 ### DXVK
 
