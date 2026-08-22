@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Enhanced SCCT Versus
+Exec=AppRun
+Icon=icon
+Type=Application
+Keywords=SplinterCell;ChaosThoery;Splinter;Cell;Chaos;Theory;Versus;Enhanced;SCCT;
+Categories=Game;
+Actions=Editor;
+
+[Desktop Action Editor]
+Name=Enhanced SCCT Versus
+Exec=AppRun --editor
+Icon=icon

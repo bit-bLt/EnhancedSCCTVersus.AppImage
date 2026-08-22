@@ -1,0 +1,64 @@
+#!/bin/sh
+
+if [ -n "${APPDIR}" ]; then
+    HERE="${APPDIR}"
+else
+    HERE="$(cd "$(dirname "$0")" && pwd -P)"
+fi
+
+export LD_LIBRARY_PATH="${HERE}/usr/lib:${HERE}/opt/wine/lib:${LD_LIBRARY_PATH}"
+export PATH="${HERE}/opt/wine/bin:${HERE}/usr/bin:${PATH}"
+
+DATA_ROOT="${HOME}/.local/share/EnhancedSCCTV"
+GAME_DIR="${DATA_ROOT}/game"
+
+## # Dirs & Write Accessable Files
+
+if [ ! -d "${DATA_ROOT}" ]; then
+    mkdir -p "${DATA_ROOT}"
+    mkdir -p "${GAME_DIR}/System"
+
+    cp -n "${HERE}/opt/game/System/DefUnrealEd.ini"     "${GAME_DIR}/System"
+    cp -n "${HERE}/opt/game/System/Editor.int"          "${GAME_DIR}/System"
+    cp -n "${HERE}/opt/game/System/DefaultProfile.ini"  "${GAME_DIR}/System"
+    cp -n "${HERE}/opt/game/System/Default.ini"         "${GAME_DIR}/System"
+    cp -n "${HERE}/opt/game/System/Default_kbd_0.ini"   "${GAME_DIR}/System"
+    cp -n "${HERE}/opt/game/System/Default_kbd_1.ini"   "${GAME_DIR}/System"
+    cp -n "${HERE}/opt/game/System/alsoft.ini"          "${GAME_DIR}/System"
+
+    touch "${GAME_DIR}/System/SCCT_Versus.exe.log"
+    touch "${GAME_DIR}/System/SCCT_Versus_crash.log"
+    touch "${GAME_DIR}/System/Reloaded.Core.dll.log"
+fi
+
+## # Symlinks
+
+find "${GAME_DIR}" -xtype l -delete
+cp -rsn "${HERE}/opt/game/." "${GAME_DIR}/" 2>/dev/null
+
+## # Wine
+
+export WINEPREFIX="${DATA_ROOT}/pfx"
+export WINEDIR="${HERE}/opt/wine"
+export WINEDLLOVERRIDES="winemenubuilder.exe=d;D3DCompiler_43=n;d3d9=n;dsound=n;"
+
+WINE="${HERE}/opt/wine/bin/wine"
+
+# Initialize Prefix
+if [ ! -d "${WINEPREFIX}" ]; then
+    "${HERE}/opt/wine/bin/wineboot" --init
+fi
+
+# Fix for DSOAL / dsound.dll loading
+if [ ! -L "${WINEPREFIX}/drive_c/windows/syswow64/dsound.dll" ]; then
+    ln -sf "${HERE}/opt/game/System/dsound.dll" "${WINEPREFIX}/drive_c/windows/syswow64/dsound.dll"
+fi
+## # Run
+
+cd "${GAME_DIR}/System" || exit 1
+
+if [ "$1" = "--editor" ]; then
+    exec "${WINE}" "Reloaded_Editor.exe" "$@"
+else
+    exec "${WINE}" "SCCT_Versus.exe" "$@"
+fi
