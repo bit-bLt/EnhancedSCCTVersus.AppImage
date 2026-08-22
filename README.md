@@ -2,7 +2,7 @@
 
 1. Place game in opt/game/
 
-2. Place wine in opt/wine
+2. Place wine in opt/wine/
 
 3. Add 32bit dxvk (d3d9.dll) to game system folder
 
@@ -12,10 +12,10 @@
 
 6. Ensure icon.png in root of EnhancedSCCTVersus.AppDir
 
-6. Run ./build
+7. Run ./build.sh
 
 
-## Directory Structure
+## AppDir Directory Structure
 
 ```
 EnhancedSCCTVersus.AppDir
