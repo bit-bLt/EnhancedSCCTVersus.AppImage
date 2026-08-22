@@ -1,4 +1,5 @@
 ## Build Process
+Note: See [AppDir Directory Structure](## AppDir Directory Structure) for proper structure
 
 1. Place game in opt/game/
 
