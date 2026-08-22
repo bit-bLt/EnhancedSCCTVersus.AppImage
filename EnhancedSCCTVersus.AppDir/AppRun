@@ -50,9 +50,7 @@ if [ ! -d "${WINEPREFIX}" ]; then
 fi
 
 # Fix for DSOAL / dsound.dll loading
-if [ ! -L "${WINEPREFIX}/drive_c/windows/syswow64/dsound.dll" ]; then
-    ln -sf "${HERE}/opt/game/System/dsound.dll" "${WINEPREFIX}/drive_c/windows/syswow64/dsound.dll"
-fi
+ln -sf "${HERE}/opt/game/System/dsound.dll" "${WINEPREFIX}/drive_c/windows/syswow64/dsound.dll"
 
 ## # Run
 
