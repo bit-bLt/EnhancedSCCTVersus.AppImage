@@ -19,13 +19,12 @@
 
 ### Wine
 
-I recommend grabbing the vanilla, wow64 wine build from the following repository:
+Unless you have a particular reason, I recommend grabbing the vanilla, non-staging, wow64 wine build from the following repository:
 https://github.com/Kron4ek/Wine-Builds/releases
 
 ### DXVK
 
 https://github.com/doitsujin/dxvk/releases
-
 
 ### DSOAL
 
