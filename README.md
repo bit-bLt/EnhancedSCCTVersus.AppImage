@@ -15,6 +15,21 @@
 
 7. Run ./build.sh
 
+## Third-Party
+
+### Wine
+
+I recommend grabbing the vanilla, wow64 wine build from the following repository:
+https://github.com/Kron4ek/Wine-Builds
+
+### DXVK
+
+https://github.com/doitsujin/dxvk/releases
+
+
+### DSOAL
+
+https://github.com/kcat/dsoal/releases
 
 ## AppDir Directory Structure
 
