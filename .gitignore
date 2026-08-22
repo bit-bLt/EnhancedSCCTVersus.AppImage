@@ -1,5 +1,8 @@
 EnhancedSCCTVersus.AppDir/opt/game/*
 EnhancedSCCTVersus.AppDir/opt/wine/*
+!EnhancedSCCTVersus.AppDir/opt/game/.gitkeep
+!EnhancedSCCTVersus.AppDir/opt/wine/.gitkeep
+
 *.AppImage
 *.png
 .DirIcon
