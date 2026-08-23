@@ -1,10 +1,10 @@
 #!/bin/sh
 ### Handles downloading and "installing" third party data
 
-WINE_URI="https://github.com/Kron4ek/Wine-Builds/releases/download/11.15/wine-11.15-amd64-wow64.tar.xz"
-DSOAL_URI="https://github.com/kcat/dsoal/releases/download/archive/DSOAL_r694.zip"
-GAME_URI="https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases/download/v3.6/Enhanced-SCCT-Versus-v3.6.7z"
-DXVK_URI="https://github.com/doitsujin/dxvk/releases/download/v3.0.2/dxvk-3.0.2.tar.gz"
+WINE_URL="https://github.com/Kron4ek/Wine-Builds/releases/download/11.15/wine-11.15-amd64-wow64.tar.xz"
+DSOAL_URL="https://github.com/kcat/dsoal/releases/download/archive/DSOAL_r694.zip"
+GAME_URL="https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases/download/v3.6/Enhanced-SCCT-Versus-v3.6.7z"
+DXVK_URL="https://github.com/doitsujin/dxvk/releases/download/v3.0.2/dxvk-3.0.2.tar.gz"
 
 HERE="$(cd "$(dirname "$0")" && pwd -P)"
 APP_DIR="${HERE}/EnhancedSCCTVersus.AppDir"
@@ -24,7 +24,7 @@ mkdir wine
 cd wine
 
 echo "Downloading wine..."
-wget "${WINE_URI}" -q --show-progress
+wget "${WINE_URL}" -q --show-progress
 
 for f in *.xz; do file="$f"; break; done
 
@@ -74,13 +74,13 @@ cd game
 
 echo "Downloading game..."
 
-case "${GAME_URI}" in
+case "${GAME_URL}" in
     *"google"*)
         echo "Detected Google Drive Link..."
-        wget --no-check-certificate -r -q --show-progress "${GAME_URI}" -O game.7z
+        wget --no-check-certificate -r -q --show-progress "${GAME_URL}" -O game.7z
     ;;
         *)
-        wget "${GAME_URI}" -q --show-progress
+        wget "${GAME_URL}" -q --show-progress
     ;;
 esac
 
@@ -132,7 +132,7 @@ mkdir dsoal
 cd dsoal
 
 echo "Downloading dsoal..."
-wget "${DSOAL_URI}" -q --show-progress
+wget "${DSOAL_URL}" -q --show-progress
 for f in *.zip; do file="$f"; break; done
 
 echo "Extracting dsoal..."
@@ -194,7 +194,7 @@ mkdir dxvk
 cd dxvk
 
 echo "Downloading DXVK..."
-wget "${DXVK_URI}" -q --show-progress
+wget "${DXVK_URL}" -q --show-progress
 
 for f in *.gz; do file="$f"; break; done
 
