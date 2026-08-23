@@ -4,5 +4,4 @@ EnhancedSCCTVersus.AppDir/opt/wine/*
 !EnhancedSCCTVersus.AppDir/opt/wine/.gitkeep
 
 *.AppImage
-*.png
 .DirIcon

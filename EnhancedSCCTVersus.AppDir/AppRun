@@ -9,7 +9,7 @@ fi
 export LD_LIBRARY_PATH="${HERE}/usr/lib:${HERE}/opt/wine/lib:${LD_LIBRARY_PATH}"
 export PATH="${HERE}/opt/wine/bin:${HERE}/usr/bin:${PATH}"
 
-DATA_ROOT="${HOME}/.local/share/EnhancedSCCTV"
+DATA_ROOT="${HOME}/.local/share/EnhancedSCCTVersus"
 GAME_DIR="${DATA_ROOT}/game"
 
 ## # Dirs & Write Accessable Files
@@ -17,6 +17,7 @@ GAME_DIR="${DATA_ROOT}/game"
 if [ ! -d "${DATA_ROOT}" ]; then
     mkdir -p "${DATA_ROOT}"
     mkdir -p "${GAME_DIR}/System"
+    mkdir "${GAME_DIR}/System/_PC_"
 
     cp -n "${HERE}/opt/game/System/DefUnrealEd.ini"     "${GAME_DIR}/System"
     cp -n "${HERE}/opt/game/System/Editor.int"          "${GAME_DIR}/System"
@@ -26,9 +27,9 @@ if [ ! -d "${DATA_ROOT}" ]; then
     cp -n "${HERE}/opt/game/System/Default_kbd_1.ini"   "${GAME_DIR}/System"
     cp -n "${HERE}/opt/game/System/alsoft.ini"          "${GAME_DIR}/System"
 
-    touch "${GAME_DIR}/System/SCCT_Versus.exe.log"
-    touch "${GAME_DIR}/System/SCCT_Versus_crash.log"
-    touch "${GAME_DIR}/System/Reloaded.Core.dll.log"
+    cp -n "${HERE}/opt/game/System/_PC_/Engine.int"     "${GAME_DIR}/System/_PC_"
+    cp -n "${HERE}/opt/game/System/_PC_/GUI.int"        "${GAME_DIR}/System/_PC_"
+    cp -n "${HERE}/opt/game/System/_PC_/SBase.int"      "${GAME_DIR}/System/_PC_"
 fi
 
 ## # Symlinks

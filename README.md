@@ -1,4 +1,11 @@
 ## Build Process
+
+### Auto Third-Party
+
+./build --auto
+
+### Manual Third-Party
+
 **Note:** See [AppDir Directory Structure](#appdir-directory-structure) for proper structure
 
 1. Place game in opt/game/
