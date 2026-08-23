@@ -1,3 +1,5 @@
+**Note**: Supports EnhancedSCCTVersus 4.0+
+
 ## Build Process
 
 ### Auto Third-Party
@@ -25,7 +27,6 @@
 ## Third-Party
 
 ### Enhanced SCCT Versus
-**Note:** Steam Input will not work with this AppImage for Enhanced SCCT Versus versions prior to 4.0
 
 https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases
 
