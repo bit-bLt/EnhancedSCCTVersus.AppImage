@@ -12,8 +12,22 @@ WINE_DIR="${APP_DIR}/opt/wine/"
 GAME_DIR="${APP_DIR}/opt/game/"
 GAMESYS_DIR="${GAME_DIR}/System"
 
+CMD_CHECK="7z unzip tar wget"
 
 ## # Start
+
+missing=0
+for cmd in $CMD_CHECK; do
+    if ! command -v "${cmd}" >/dev/null 2>&1; then
+        echo "Missing command: ${cmd}"
+        missing=1
+    fi
+done
+
+if [ $missing -eq 1 ]; then
+    echo "Please install missing commands and try again."
+    exit 1
+fi
 
 mkdir _tmp
 cd _tmp

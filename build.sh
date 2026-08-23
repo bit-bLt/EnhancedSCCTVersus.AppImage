@@ -8,7 +8,7 @@ APP_DIR="EnhancedSCCTVersus.AppDir"
 # Download and install third party data
 if [ "$1" = "--auto" ]; then
     echo "Installing third party data..."
-    ./_tp.sh
+    . ./_tp.sh
 fi
 
 if [ ! -f "${APPIMAGE_TOOL}" ]; then
