@@ -3,7 +3,8 @@
 
 WINE_URI="https://github.com/Kron4ek/Wine-Builds/releases/download/11.15/wine-11.15-amd64-wow64.tar.xz"
 DSOAL_URI="https://github.com/kcat/dsoal/releases/download/archive/DSOAL_r694.zip"
-GAME_URI="https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases/download/v3.6/Enhanced-SCCT-Versus-v3.6.7z"
+#GAME_URI="https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases/download/v3.6/Enhanced-SCCT-Versus-v3.6.7z"
+GAME_URI="https://drive.usercontent.google.com/download?export=download&id=16U49MTU3PBzUNHp4FvlwJwLWQb8hyxZ4&confirm=t"
 DXVK_URI="https://github.com/doitsujin/dxvk/releases/download/v3.0.2/dxvk-3.0.2.tar.gz"
 
 HERE="$(cd "$(dirname "$0")" && pwd -P)"
@@ -73,7 +74,17 @@ mkdir game
 cd game
 
 echo "Downloading game..."
-wget "${GAME_URI}" -q --show-progress
+
+case "${GAME_URI}" in
+    *"google"*)
+        echo "Detected Google Drive Link..."
+        wget --no-check-certificate -r -q --show-progress "${GAME_URI}" -O game.7z
+    ;;
+        *)
+        wget "${GAME_URI}" -q --show-progress
+    ;;
+esac
+
 
 for f in *.7z; do file="$f"; break; done
 
