@@ -19,6 +19,6 @@ fi
 chmod +x "${APPIMAGE_TOOL}"
 
 echo "Building AppImage..."
-./"${APPIMAGE_TOOL}" "${APP_DIR}" "${PACKAGE_NAME}"
+ARCH=x86_64 ./"${APPIMAGE_TOOL}" "${APP_DIR}" "${PACKAGE_NAME}"
 
 echo "Build finished!"
