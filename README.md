@@ -1,10 +1,12 @@
-**Note**: Supports EnhancedSCCTVersus 4.0+
+## Support
+
+Supports EnhancedSCCTVersus 4.0+
 
 ## Build Process
 
 ### Auto Third-Party
 
-./build --auto
+./build.sh --auto
 
 ### Manual Third-Party
 
