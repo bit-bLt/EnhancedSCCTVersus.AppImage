@@ -41,7 +41,7 @@ cp -rsn "${HERE}/opt/game/." "${GAME_DIR}/" 2>/dev/null
 
 export WINEPREFIX="${DATA_ROOT}/pfx"
 export WINEDIR="${HERE}/opt/wine"
-export WINEDLLOVERRIDES="wmscoree=;inemenubuilder.exe=d;D3DCompiler_43=n;d3d9=n;dsound=n;"
+export WINEDLLOVERRIDES="wmscoree=;winemenubuilder.exe=d;D3DCompiler_43=n;dsound=n;d3d9=n"
 
 WINE="${HERE}/opt/wine/bin/wine"
 
@@ -57,8 +57,16 @@ ln -sf "${HERE}/opt/game/System/dsound.dll" "${WINEPREFIX}/drive_c/windows/syswo
 
 cd "${GAME_DIR}/System" || exit 1
 
-if [ "$1" = "--editor" ]; then
-    exec "${WINE}" "Reloaded_Editor.exe" "$@"
-else
-    exec "${WINE}" "SCCT_Versus.exe" "$@"
-fi
+runcmd="SCCT_Versus.exe"
+
+for arg in "$@"; do
+    if [ "$arg" = "--editor" ]; then
+        runcmd="Reloaded_Editor.exe"
+    fi
+
+    if [ "$arg" = "--ogl" ]; then
+        WINEDLLOVERRIDES=$(echo "$WINEDLLOVERRIDES" | sed 's/d3d9=n/d3d9=b/g')
+    fi
+done
+
+exec "$WINE" "$runcmd" "$@"

@@ -11,7 +11,6 @@ APP_DIR="${HERE}/EnhancedSCCTVersus.AppDir"
 WINE_DIR="${APP_DIR}/opt/wine/"
 GAME_DIR="${APP_DIR}/opt/game/"
 GAMESYS_DIR="${GAME_DIR}/System"
-
 CMD_CHECK="7z unzip tar wget"
 
 ## # Start
