@@ -9,7 +9,7 @@ Supports EnhancedSCCTVersus 4.0+
 | Arg  | Description |
 | ------------- | ------------- |
 | --editor | Launches Reloaded Editor  |
-| --ogl  | Uses WineD3D (OGL) instead of DXVK (Vulkan). *Note: This is only for old systems and is otherwise not recommended*  |
+| --ogl  | Uses WineD3D (OGL) instead of DXVK (Vulkan)<br> *Note: This is only for old systems and is otherwise not recommended*  |
 
 ## Build Process
 
