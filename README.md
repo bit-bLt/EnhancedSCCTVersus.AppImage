@@ -43,7 +43,6 @@ https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases
 
 ### Wine
 
-The following repository is recommended:
 https://github.com/Kron4ek/Wine-Builds/releases
 
 ### DXVK
