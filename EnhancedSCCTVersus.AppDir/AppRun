@@ -41,7 +41,7 @@ cp -rsn "${HERE}/opt/game/." "${GAME_DIR}/" 2>/dev/null
 
 export WINEPREFIX="${DATA_ROOT}/pfx"
 export WINEDIR="${HERE}/opt/wine"
-export WINEDLLOVERRIDES="winemenubuilder.exe=d;D3DCompiler_43=n;d3d9=n;dsound=n;"
+export WINEDLLOVERRIDES="wmscoree=;inemenubuilder.exe=d;D3DCompiler_43=n;d3d9=n;dsound=n;"
 
 WINE="${HERE}/opt/wine/bin/wine"
 
