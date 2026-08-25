@@ -5,10 +5,10 @@ APPIMAGE_TOOL="appimagetool-x86_64.AppImage"
 PACKAGE_NAME="Enhanced_SCCT_Versus.AppImage"
 APP_DIR="EnhancedSCCTVersus.AppDir"
 
-# Download and install third party data
+# Download and install external data
 if [ "$1" = "--auto" ]; then
-    echo "Installing third party data..."
-    . ./_tp.sh
+    echo "Installing External data..."
+    . ./ext.sh
 fi
 
 if [ ! -f "${APPIMAGE_TOOL}" ]; then

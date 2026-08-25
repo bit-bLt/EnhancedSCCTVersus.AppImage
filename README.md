@@ -4,11 +4,11 @@ Supports EnhancedSCCTVersus 4.0+
 
 ## Build Process
 
-### Auto Third-Party
+### Auto External Data
 
-./build.sh --auto
+Run: ./build.sh --auto
 
-### Manual Third-Party
+### Manual External Data
 
 **Note:** See [AppDir Directory Structure](#appdir-directory-structure) for proper structure
 
@@ -22,9 +22,7 @@ Supports EnhancedSCCTVersus 4.0+
 
 5. Modify alsoft.ini as needed
 
-6. Ensure icon.png in root of EnhancedSCCTVersus.AppDir
-
-7. Run ./build.sh
+6. Run ./build.sh
 
 ## Third-Party
 
@@ -34,7 +32,7 @@ https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases
 
 ### Wine
 
-I recommend grabbing the vanilla, non-staging, wow64 wine build from the following repository:
+The following repository is recommended:
 https://github.com/Kron4ek/Wine-Builds/releases
 
 ### DXVK
@@ -44,6 +42,17 @@ https://github.com/doitsujin/dxvk/releases
 ### DSOAL
 
 https://github.com/kcat/dsoal/releases
+
+## Game Data
+
+Stored in: ~/local/share/EnhancedSCCTVersus/game
+
+### Note on Game Data, Configuration, and Log Files
+
+Specific files that require write access, such as config files and log files, will remain persistent and writeable within ~/.local/share/EnhancedSCCTVersus/game
+
+The rest of the game data in that folder are temporary symbolic links created at runtime.
+
 
 ## AppDir Directory Structure
 
@@ -57,6 +66,7 @@ EnhancedSCCTVersus.AppDir
     │   ├── Menus
     │   ├── Packages
     │   └── System
+    │       ├── alsoft.ini
     │       ├── d3d9.dll
     │       ├── dsoal-aldrv.dll
     │       └── dsound.dll
