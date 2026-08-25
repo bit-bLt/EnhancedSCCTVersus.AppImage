@@ -17,7 +17,7 @@ Supports EnhancedSCCTVersus 4.0+
 
 Run: ./build.sh --ext
 
-This will download and deploy, and configure [externals](#externals).
+This will download, deploy, and configure [externals](#externals).
 
 ### Manual External Data
 
