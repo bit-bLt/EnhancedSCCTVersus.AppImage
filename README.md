@@ -24,7 +24,7 @@ Run: ./build.sh --auto
 
 6. Run ./build.sh
 
-## Third-Party
+## Externals
 
 ### Enhanced SCCT Versus
 
