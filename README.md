@@ -1,3 +1,11 @@
+## Game Args
+
+
+| Arg  | Description |
+| ------------- | ------------- |
+| --editor | Launches Reloaded Editor  |
+| --ogl  | Uses WineD3D (OGL) instead of DXVK (Vulkan)  |
+
 ## Support
 
 Supports EnhancedSCCTVersus 4.0+
