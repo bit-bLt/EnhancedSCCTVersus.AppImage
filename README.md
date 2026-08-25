@@ -1,3 +1,8 @@
+## Supported Versions
+
+Supports EnhancedSCCTVersus 4.0+
+
+
 ## Game Args
 
 
@@ -6,15 +11,13 @@
 | --editor | Launches Reloaded Editor  |
 | --ogl  | Uses WineD3D (OGL) instead of DXVK (Vulkan)  |
 
-## Support
-
-Supports EnhancedSCCTVersus 4.0+
-
 ## Build Process
 
 ### Auto External Data
 
-Run: ./build.sh --auto
+Run: ./build.sh --ext
+
+This will download and deploy, and configure [externals](#externals).
 
 ### Manual External Data
 

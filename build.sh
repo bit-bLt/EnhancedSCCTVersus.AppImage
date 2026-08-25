@@ -6,7 +6,7 @@ PACKAGE_NAME="Enhanced_SCCT_Versus.AppImage"
 APP_DIR="EnhancedSCCTVersus.AppDir"
 
 # Download and install external data
-if [ "$1" = "--auto" ]; then
+if [ "$1" = "--ext" ]; then
     echo "Installing External data..."
     . ./ext.sh
 fi
