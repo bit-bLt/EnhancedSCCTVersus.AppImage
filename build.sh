@@ -7,6 +7,10 @@ APP_DIR="EnhancedSCCTVersus.AppDir"
 
 # Download and install external data
 if [ "$1" = "--ext" ]; then
+    echo "Removing existing data in opt/game and opt/wine..."
+    rm -rf "${APP_DIR}/opt/game/"*
+    rm -rf "${APP_DIR}/opt/wine/"*
+
     echo "Installing External data..."
     . ./ext.sh
 fi
