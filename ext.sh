@@ -1,10 +1,10 @@
 #!/bin/sh
 ### Handles downloading and "installing" third party data
 
-WINE_URL="https://github.com/Kron4ek/Wine-Builds/releases/download/11.15/wine-11.15-amd64-wow64.tar.xz"
-DSOAL_URL="https://github.com/kcat/dsoal/releases/download/archive/DSOAL_r694.zip"
-GAME_URL="https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases/download/v3.6/Enhanced-SCCT-Versus-v3.6.7z"
-DXVK_URL="https://github.com/doitsujin/dxvk/releases/download/v3.0.2/dxvk-3.0.2.tar.gz"
+WINE_URL="https://github.com/Kron4ek/Wine-Builds/releases/download/11.20/wine-11.20-amd64-wow64.tar.xz"
+DSOAL_URL="https://github.com/kcat/dsoal/releases/download/latest-master/DSOAL.zip"
+GAME_URL="https://drive.usercontent.google.com/download?export=download&id=1rI6-48Ntp7FsGW1BMwA2yZjDe10N5b2e&confirm=t"
+DXVK_URL="https://github.com/doitsujin/dxvk/releases/download/v3.1.1/dxvk-3.1.1.tar.gz"
 
 HERE="$(cd "$(dirname "$0")" && pwd -P)"
 APP_DIR="${HERE}/EnhancedSCCTVersus.AppDir"
