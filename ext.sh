@@ -214,7 +214,7 @@ for f in *.gz; do file="$f"; break; done
 echo "Extracting DXVK..."
 tar -xzf "${file}" 
 
-expected="d3d9.dll"
+expected="d3d11.dll"
 expected_c=$(echo $expected | wc -w)
 root_dir=""
 
@@ -249,7 +249,8 @@ if [ "${root_dir}" = "" ]; then
 fi
 
 echo "Copying DXVK data..."
-cp -r "${root_dir}/d3d9.dll" "${GAMESYS_DIR}"
+cp -r "${root_dir}/d3d11.dll" "${GAMESYS_DIR}"
+cp -r "${root_dir}/dxgi.dll" "${GAMESYS_DIR}"
 
 # done
 cd ../
