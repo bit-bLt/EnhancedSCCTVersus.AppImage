@@ -41,7 +41,7 @@ cp -rsn "${HERE}/opt/game/." "${GAME_DIR}/" 2>/dev/null
 
 export WINEPREFIX="${DATA_ROOT}/pfx"
 export WINEDIR="${HERE}/opt/wine"
-export WINEDLLOVERRIDES="wmscoree=;winemenubuilder.exe=d;D3DCompiler_43=n;dsound=n;d3d9=n"
+export WINEDLLOVERRIDES="wmscoree=;winemenubuilder.exe=d;D3DCompiler_43=n;D3DCompiler_47=n;dsound=n;d3d11=n;dxgi=n"
 
 WINE="${HERE}/opt/wine/bin/wine"
 
@@ -65,7 +65,8 @@ for arg in "$@"; do
     fi
 
     if [ "$arg" = "--ogl" ]; then
-        WINEDLLOVERRIDES=$(echo "$WINEDLLOVERRIDES" | sed 's/d3d9=n/d3d9=b/g')
+        WINEDLLOVERRIDES=$(echo "$WINEDLLOVERRIDES" | sed 's/d3d11=n/d3d11=b/g')
+        WINEDLLOVERRIDES=$(echo "$WINEDLLOVERRIDES" | sed 's/dxgi=n/dxgi=b/g')
     fi
 done
 
