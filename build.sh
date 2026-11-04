@@ -2,7 +2,7 @@
 
 APPIMAGE_TOOL_URI="https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage"
 APPIMAGE_TOOL="appimagetool-x86_64.AppImage"
-PACKAGE_NAME="Enhanced_SCCT_Versus.AppImage"
+PACKAGE_NAME="Enhanced-SCCT-Versus-v4-beta3.AppImage"
 APP_DIR="EnhancedSCCTVersus.AppDir"
 
 # Download and install external data
