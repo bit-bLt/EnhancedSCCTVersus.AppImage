@@ -19,6 +19,7 @@ if [ ! -d "${DATA_ROOT}" ]; then
     mkdir -p "${GAME_DIR}/System"
     mkdir "${GAME_DIR}/System/_PC_"
 
+    # Text files that should be editable (match native Windows install opportunities)
     cp -n "${HERE}/opt/game/System/DefUnrealEd.ini"     "${GAME_DIR}/System"
     cp -n "${HERE}/opt/game/System/Editor.int"          "${GAME_DIR}/System"
     cp -n "${HERE}/opt/game/System/DefaultProfile.ini"  "${GAME_DIR}/System"
@@ -41,7 +42,10 @@ cp -rsn "${HERE}/opt/game/." "${GAME_DIR}/" 2>/dev/null
 
 export WINEPREFIX="${DATA_ROOT}/pfx"
 export WINEDIR="${HERE}/opt/wine"
-export WINEDLLOVERRIDES="wmscoree=;winemenubuilder.exe=d;D3DCompiler_43=n;D3DCompiler_47=n;dsound=n;d3d11=n;dxgi=n"
+
+# Note: confirm which of these are actually needed, because dxgi=n and d3d11=n were not. Later wine
+# may prevent explicit needs. IIRC, proton made changes to avoid needing to in at least some cases.
+export WINEDLLOVERRIDES="wmscoree=;winemenubuilder.exe=d;D3DCompiler_43=n;D3DCompiler_47=n;dsound=n"
 
 WINE="${HERE}/opt/wine/bin/wine"
 
@@ -63,10 +67,11 @@ for arg in "$@"; do
     if [ "$arg" = "--editor" ]; then
         runcmd="Reloaded_Editor.exe"
     fi
-
+    
+    # Enable DXVK unless --ogl
     if [ "$arg" = "--ogl" ]; then
-        WINEDLLOVERRIDES=$(echo "$WINEDLLOVERRIDES" | sed 's/d3d11=n/d3d11=b/g')
-        WINEDLLOVERRIDES=$(echo "$WINEDLLOVERRIDES" | sed 's/dxgi=n/dxgi=b/g')
+       rm "${GAME_DIR}/System/dxgi.dll"
+       rm "${GAME_DIR}/System/d3d11.dll"
     fi
 done
 
