@@ -9,7 +9,7 @@ Supports EnhancedSCCTVersus 4.0+
 | Arg  | Description |
 | ------------- | ------------- |
 | --editor | Launches Reloaded Editor  |
-| --ogl  | Uses WineD3D (OGL) instead of DXVK (Vulkan)<br> *Note: This is only for old systems and is otherwise not recommended*  |
+| --ogl  | Uses WineD3D (OGL) instead of DXVK (Vulkan)<br> *Note: This is only for compatability with old systems and is otherwise not recommended. Shader compilation stutter will be heavy during first several hours.*  |
 
 ## Build Process
 
@@ -27,7 +27,7 @@ This will download, deploy, and configure [externals](#externals).
 
 2. Place wine in opt/wine/
 
-3. Add 32bit dxvk (d3d9.dll) to game system folder
+3. Add 32bit dxvk (dxgi.dll & d3d11.dll) to game system folder
 
 4. Add 32bit dsoal (dsound.dll, dsoal-aldrv.dll, alsoft.ini) to game system folder
 
