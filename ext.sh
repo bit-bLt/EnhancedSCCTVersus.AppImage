@@ -1,9 +1,9 @@
 #!/bin/sh
 ### Handles downloading and "installing" third party data
 
-WINE_URL="https://github.com/Kron4ek/Wine-Builds/releases/download/11.20/wine-11.20-amd64-wow64.tar.xz"
+WINE_URL="https://github.com/Kron4ek/Wine-Builds/releases/download/11.19/wine-11.19-amd64-wow64.tar.xz"
 DSOAL_URL="https://github.com/kcat/dsoal/releases/download/latest-master/DSOAL.zip"
-GAME_URL="https://drive.usercontent.google.com/download?export=download&id=1rI6-48Ntp7FsGW1BMwA2yZjDe10N5b2e&confirm=t"
+GAME_URL="https://github.com/Joshhhuaaa/EnhancedSCCTVersus/releases/download/v4.0-beta.5/Enhanced-SCCT-Versus-v4.0-Beta-5.7z"
 DXVK_URL="https://github.com/doitsujin/dxvk/releases/download/v3.1.1/dxvk-3.1.1.tar.gz"
 
 HERE="$(cd "$(dirname "$0")" && pwd -P)"
