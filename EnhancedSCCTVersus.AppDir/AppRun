@@ -19,7 +19,7 @@ if [ ! -d "${DATA_ROOT}" ]; then
     mkdir -p "${GAME_DIR}/System"
     mkdir "${GAME_DIR}/System/_PC_"
 
-    # Text files that should be editable (match native Windows install opportunities)
+    # Files that need write access
     cp -n "${HERE}/opt/game/System/DefUnrealEd.ini"     "${GAME_DIR}/System"
     cp -n "${HERE}/opt/game/System/Editor.int"          "${GAME_DIR}/System"
     cp -n "${HERE}/opt/game/System/DefaultProfile.ini"  "${GAME_DIR}/System"
@@ -31,6 +31,10 @@ if [ ! -d "${DATA_ROOT}" ]; then
     cp -n "${HERE}/opt/game/System/_PC_/Engine.int"     "${GAME_DIR}/System/_PC_"
     cp -n "${HERE}/opt/game/System/_PC_/GUI.int"        "${GAME_DIR}/System/_PC_"
     cp -n "${HERE}/opt/game/System/_PC_/SBase.int"      "${GAME_DIR}/System/_PC_"
+
+    # For the built-in updater. A rename happens, so we need to make this not a symlink
+    cp -n "${HERE}/opt/game/System/Reloaded.Core.dll"   "${GAME_DIR}/System/"
+
 fi
 
 ## # Symlinks
