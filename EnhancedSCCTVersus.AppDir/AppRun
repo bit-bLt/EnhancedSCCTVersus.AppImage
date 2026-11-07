@@ -14,7 +14,7 @@ GAME_DIR="${DATA_ROOT}/game"
 
 ## # Dirs & Write Accessable Files
 
-if [ ! -d "${DATA_ROOT}" ]; then
+if [ ! -d "${GAME_DIR}" ]; then
     mkdir -p "${DATA_ROOT}"
     mkdir -p "${GAME_DIR}/System"
     mkdir "${GAME_DIR}/System/_PC_"
