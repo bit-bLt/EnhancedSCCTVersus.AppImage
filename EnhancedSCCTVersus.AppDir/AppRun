@@ -84,6 +84,10 @@ for arg in "$@"; do
        rm "${GAME_DIR}/System/dxgi.dll"
        rm "${GAME_DIR}/System/d3d11.dll"
     fi
+
+    if [ "$arg" = "--wayland" ]; then
+        unset DISPLAY
+    fi
 done
 
 exec "$WINE" "$runcmd" "$@"
