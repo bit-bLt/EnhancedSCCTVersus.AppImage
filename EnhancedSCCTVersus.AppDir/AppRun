@@ -12,34 +12,41 @@ export PATH="${HERE}/opt/wine/bin:${HERE}/usr/bin:${PATH}"
 DATA_ROOT="${HOME}/.local/share/EnhancedSCCTVersus"
 GAME_DIR="${DATA_ROOT}/game"
 
-## # Dirs & Write Accessable Files
+## # Dirs, Write Accessable Files, Symlinks
 
 if [ ! -d "${GAME_DIR}" ]; then
     mkdir -p "${DATA_ROOT}"
     mkdir -p "${GAME_DIR}/System"
     mkdir "${GAME_DIR}/System/_PC_"
-
-    # Files that need write access
-    cp -n "${HERE}/opt/game/System/DefUnrealEd.ini"     "${GAME_DIR}/System"
-    cp -n "${HERE}/opt/game/System/Editor.int"          "${GAME_DIR}/System"
-    cp -n "${HERE}/opt/game/System/DefaultProfile.ini"  "${GAME_DIR}/System"
-    cp -n "${HERE}/opt/game/System/Default.ini"         "${GAME_DIR}/System"
-    cp -n "${HERE}/opt/game/System/Default_kbd_0.ini"   "${GAME_DIR}/System"
-    cp -n "${HERE}/opt/game/System/Default_kbd_1.ini"   "${GAME_DIR}/System"
-    cp -n "${HERE}/opt/game/System/alsoft.ini"          "${GAME_DIR}/System"
-
-    cp -n "${HERE}/opt/game/System/_PC_/Engine.int"     "${GAME_DIR}/System/_PC_"
-    cp -n "${HERE}/opt/game/System/_PC_/GUI.int"        "${GAME_DIR}/System/_PC_"
-    cp -n "${HERE}/opt/game/System/_PC_/SBase.int"      "${GAME_DIR}/System/_PC_"
-
-    # For the built-in updater. A rename happens, so we need to make this not a symlink
-    cp -n "${HERE}/opt/game/System/Reloaded.Core.dll"   "${GAME_DIR}/System/"
-
 fi
 
-## # Symlinks
-
+# Delete existing / previous symlinks
 find "${GAME_DIR}" -xtype l -delete
+
+# Files that need write access (-n no clobber)
+cp -n "${HERE}/opt/game/System/DefUnrealEd.ini"         "${GAME_DIR}/System"
+cp -n "${HERE}/opt/game/System/Editor.int"              "${GAME_DIR}/System"
+cp -n "${HERE}/opt/game/System/DefaultProfile.ini"      "${GAME_DIR}/System"
+cp -n "${HERE}/opt/game/System/Default.ini"             "${GAME_DIR}/System"
+cp -n "${HERE}/opt/game/System/Default_kbd_0.ini"       "${GAME_DIR}/System"
+cp -n "${HERE}/opt/game/System/Default_kbd_1.ini"       "${GAME_DIR}/System"
+cp -n "${HERE}/opt/game/System/alsoft.ini"              "${GAME_DIR}/System"
+cp -n "${HERE}/opt/game/System/PropertiesSets.ini"      "${GAME_DIR}/System"
+
+cp -n "${HERE}/opt/game/System/_PC_/Engine.int"         "${GAME_DIR}/System/_PC_"
+cp -n "${HERE}/opt/game/System/_PC_/GUI.int"            "${GAME_DIR}/System/_PC_"
+cp -n "${HERE}/opt/game/System/_PC_/SBase.int"          "${GAME_DIR}/System/_PC_"
+
+# For the built-in updater. A rename happens on these, so we need to make them not a symlink
+cp -n "${HERE}/opt/game/System/Reloaded.Core.dll"       "${GAME_DIR}/System/"
+cp -n "${HERE}/opt/game/System/Reloaded.Editor.dll"     "${GAME_DIR}/System/"
+cp -n "${HERE}/opt/game/System/Reloaded.Update.ex"      "${GAME_DIR}/System/"
+cp -n "${HERE}/opt/game/System/SCCT_Versus.exe"         "${GAME_DIR}/System/"
+cp -n "${HERE}/opt/game/System/Reloaded.Core.dll"       "${GAME_DIR}/System/"
+cp -n "${HERE}/opt/game/System/SCCT Versus"             "${GAME_DIR}/System/"
+
+# Create Symlinks
+
 cp -rsn "${HERE}/opt/game/." "${GAME_DIR}/" 2>/dev/null
 
 ## # Wine
