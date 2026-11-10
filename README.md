@@ -6,8 +6,8 @@ Supports EnhancedSCCTVersus 4.0+
 ## Game Args
 
 
-| Arg           | Description |
-| ------------- | ------------- |
+| Arg &nbsp;&nbsp; | Description |
+| --- | --- |
 | --editor      | Launches Reloaded Editor  |
 | --ogl         | Uses WineD3D (OGL) instead of DXVK (Vulkan)<br> *Note: This is only for compatability with old systems and is otherwise not recommended. Shader compilation stutter will be heavy during first several hours.*  |
 | --wayland     | Experimental; should lead to better latency, but may cause unexpected windowing issues |
