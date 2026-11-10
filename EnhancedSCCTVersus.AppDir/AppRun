@@ -56,7 +56,7 @@ export WINEDIR="${HERE}/opt/wine"
 
 # Note: confirm which of these are actually needed, because dxgi=n and d3d11=n were not. Later wine
 # may prevent explicit needs. IIRC, proton made changes to avoid needing to in at least some cases.
-export WINEDLLOVERRIDES="wmscoree=;winemenubuilder.exe=d;D3DCompiler_43=n;D3DCompiler_47=n;dsound=n"
+export WINEDLLOVERRIDES="mscoree=d;winemenubuilder.exe=d;D3DCompiler_43=n;D3DCompiler_47=n;dsound=n"
 
 WINE="${HERE}/opt/wine/bin/wine"
 
